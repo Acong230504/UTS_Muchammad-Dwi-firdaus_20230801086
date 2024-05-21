@@ -1,0 +1,69 @@
+#include <iostream>
+
+
+void menu() {
+    std::cout << "Pilih operasi:\n";
+    std::cout << "1. Penjumlahan\n";
+    std::cout << "2. Pengurangan\n";
+    std::cout << "3. Perkalian\n";
+    std::cout << "4. Pembagian\n";
+}
+
+
+void tambah(int a, int b) {
+    std::cout << "Penjumlahan: " << (a + b) << std::endl;
+}
+
+
+void kurang(int a, int b) {
+    std::cout << "Pengurangan: " << (a - b) << std::endl;
+}
+
+
+void kali(int a, int b) {
+    std::cout << "Perkalian: " << (a * b) << std::endl;
+}
+
+
+void bagi(int a, int b) {
+    if (b != 0) {
+        std::cout << "Pembagian: " << (a / b) << std::endl;
+    } else {
+        std::cout << "Error: Pembagian dengan nol tidak diperbolehkan." << std::endl;
+    }
+}
+
+int main() {
+    int angka1, angka2, pilihan;
+
+    std::cout << "Masukan angka pertama: ";
+    std::cin >> angka1;
+
+    std::cout << "Masukan angka kedua: ";
+    std::cin >> angka2;
+
+    menu();
+
+    std::cout << "Masukan pilihan: ";
+    std::cin >> pilihan;
+
+    switch (pilihan) {
+        case 1:
+            tambah(angka1, angka2);
+            break;
+        case 2:
+            kurang(angka1, angka2);
+            break;
+        case 3:
+            kali(angka1, angka2);
+            break;
+        case 4:
+            bagi(angka1, angka2);
+            break;
+        default:
+            std::cout << "Pilihan tidak valid" << std::endl;
+            break;
+    }
+
+    return 0;
+}
